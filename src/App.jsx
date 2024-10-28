@@ -48,6 +48,7 @@ function App() {
         ]
       },
       // Adicione mais polígonos aqui
+      
     ];
 
     const geojson = {
