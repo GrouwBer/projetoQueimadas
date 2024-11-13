@@ -65,7 +65,7 @@ const Grafico = () => {
 
   return (
     <div className='grafico'>
-      <canvas ref={chartRef}></canvas>
+      <canvas id="grafico" ref={chartRef}></canvas>
     </div>
   );
 };

@@ -36,18 +36,15 @@ function App() {
         {verGrafico ? 'Fechar Gráfico' : 'Gráfico'}
       </button>
       {verGrafico && (
-        <div  style={{ zIndex: 1000, position: 'absolute', top: 0, left: 0 }}>
-          <Draggable>
-            <div>
-            <ResizableBox width={300} height={150} minConstraints={[200, 200]} maxConstraints={[600, 600]}>
-             
-                
-                  <Grafico />
-              
-            </ResizableBox>
+              <div style={{ zIndex: 1000, position: 'absolute', top: 0, left: 0 }}>
+              <Draggable>
+                <div>
+                  <ResizableBox width={300} height={150} minConstraints={[200, 200]} maxConstraints={[600, 600]}>
+                    <Grafico />
+                  </ResizableBox>
+                </div>
+              </Draggable>
             </div>
-          </Draggable>
-        </div>
       )}
     </div>
   );
