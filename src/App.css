@@ -4,11 +4,8 @@
   border-radius: 8px;
   margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  width: 95% !important;
+  height: 95% !important;
 }
 
 body {
@@ -28,26 +25,34 @@ h1 {
 }
 
 .leaflet-container {
-  height: 100%;
-  width: 100%;
+  border-radius: 8px;
+  height: 1000px !important;
+  width: 100% !important; 
+  z-index: 1000 !important;
 }
 
-.container {
-height: fit-content;
-}
+
 
 .map-container {
-  height: 100%;
-  width: 100%;
-  z-index: 1000;
+  height: 100% !important;
+  width: 100% !important;
+  z-index: 1000 !important;
 }
 
 .grid {
   position: relative;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
 }
 
 a {

@@ -46,18 +46,18 @@ function App() {
         }));
         setWeatherData(weatherData);
       })
-      .catch(error => console.error('Error fetching weather data:', error));
+      .catch(error => console.error('Erro ao carregar:', error));
 
     axios.get('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson')
       .then(response => {
         const data = response.data.features.map((feature: any) => ({
           lat: feature.geometry.coordinates[1],
           lng: feature.geometry.coordinates[0],
-          intensity: feature.properties.mag
+          intensity: feature.properties.mag*4
         }));
         setHeatmapData(data);
       })
-      .catch(error => console.error('Error fetching heatmap data:', error));
+      .catch(error => console.error('Erro ao Carregar mapa fogo:', error));
 
     axios.get(`https://api.openweathermap.org/data/2.5/air_pollution?lat=-21.78&lon=-46.56&appid=72d21052287751c62fd06d937e623ce7`)
       .then(response => {
@@ -72,7 +72,7 @@ function App() {
           co: data.components.co,
         });
       })
-      .catch(error => console.error('Error fetching air quality data:', error));
+      .catch(error => console.error('Erro ao carregar poluentes:', error));
   }, []);
 
   const getAirQualityText = (aqi: number) => {
